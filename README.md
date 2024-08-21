@@ -1,5 +1,7 @@
 # Project 3: Around The U.S.
 
+This is Project 3 in which I was introduced to Figma. For this project, I have to make a responsive website and it was my first time making it. Definitely, it was challenging but finally I did it! This was such an achievement for me.
+
 ### Overview
 
 - Intro
@@ -17,5 +19,11 @@ This project is made so all the elements are displayed correctly on popular scre
 **Images**
 
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
+
+**Plans for improving the project**
+
+I will definitely practice more since this is what I'll be doing in the future, so I'll make sure I'm really good at making responisve websites. I think it came out great and I wouldn't improve just yet, but definitely soon I'll play around to see what else could be done.
+
+Here is my GitHub link: https://github.com/sahota1529/se_project_aroundtheus
 
 Good luck and have fun!

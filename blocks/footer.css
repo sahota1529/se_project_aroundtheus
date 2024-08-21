@@ -1,20 +1,20 @@
 .footer {
   color: #545454;
-  margin: 0 auto 60px;
+  margin-left: auto;
   max-width: 880px;
+  margin-right: auto;
+  width: 100%;
 }
 
 .footer__copyright {
   font-weight: 400;
   font-size: 18px;
   line-height: 21.78px;
-  margin: 0 auto;
+  height: 18px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 282px) {
   .footer {
     margin-bottom: 36px;
-    padding-left: 19px;
-    padding-right: 19px;
   }
 }
