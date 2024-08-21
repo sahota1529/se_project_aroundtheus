@@ -25,5 +25,6 @@ The way you'll do this at work is by exporting images directly from Figma — we
 I will definitely practice more since this is what I'll be doing in the future, so I'll make sure I'm really good at making responisve websites. I think it came out great and I wouldn't improve just yet, but definitely soon I'll play around to see what else could be done.
 
 Here is my GitHub link: https://github.com/sahota1529/se_project_aroundtheus
+Here is my video link: https://drive.google.com/file/d/1OPqj8f-KUU_ZuEgbjswKumaFyhL8zw1t/view?usp=sharing
 
 Good luck and have fun!
