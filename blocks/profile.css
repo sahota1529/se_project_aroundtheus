@@ -81,6 +81,7 @@
 @media screen and (max-width: 710px) {
   .profile {
     flex-direction: column;
+    padding-top: 42px;
   }
 
   .profile__info {
@@ -101,6 +102,7 @@
     height: 50px;
     width: 282px;
     cursor: pointer;
+    margin-left: 0;
   }
 
   .profile__title {
@@ -123,5 +125,6 @@
     width: 120px;
     background-position: center;
     object-fit: cover;
+    margin-bottom: 30px;
   }
 }

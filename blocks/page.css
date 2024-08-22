@@ -6,10 +6,13 @@
 }
 
 .page__section {
-  max-width: 880px;
+  max-width: 920px;
   width: 100%;
   position: relative;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .page__content {
