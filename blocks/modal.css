@@ -9,9 +9,10 @@
   display: flex;
   padding: 0 19px;
   align-items: center;
+  display: none;
 }
 
-.modal__opened {
+.modal_opened {
   display: flex;
 }
 
