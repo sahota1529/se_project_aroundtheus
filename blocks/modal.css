@@ -70,6 +70,7 @@
   margin-top: 18.26px;
   border-radius: 2px 0px 0px 0px;
   padding: 0;
+  font-size: 14px;
 }
 
 .modal__input {
@@ -98,12 +99,15 @@
   .modal__input {
     width: 100%;
     margin-bottom: 30px;
+    padding: 8px;
+    font-size: 12px;
   }
 
   .modal__button-save {
     width: 100%;
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 12px;
+    padding: 8px;
   }
 
   .modal__heading {
