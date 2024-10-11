@@ -14,6 +14,9 @@
 
 .modal_opened {
   display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .modal__title {
@@ -38,6 +41,11 @@
   position: relative;
   width: 430px;
   box-sizing: border-box;
+}
+
+.modal__preview-container {
+  margin: auto;
+  position: relative;
 }
 
 .modal__close {
@@ -86,6 +94,12 @@
   border-bottom: 1px solid rgba(0, 0, 0.2);
   margin-bottom: 29.74px;
   padding-bottom: 13.26px;
+}
+
+.modal__image-preview {
+  max-width: 75vw;
+  max-height: 75vh;
+  background: none;
 }
 
 @media screen and (max-width: 620px) {
