@@ -150,16 +150,14 @@ addCardModal.addEventListener("click", () => openModal(addCardModal));
 
 // add event listener for the add card modal close button
 closeButtons.forEach((button) => {
-  // Find the closest popup only once
   const popup = button.closest(".modal");
-  // Set the listener
+
   button.addEventListener("click", () => closePopup(popup));
 });
 
 profileEditModal.addEventListener("submit", handleProfileEditSubmit);
 
 addNewCardButton.addEventListener("click", () => {
-  //addCardModal.classList.add("modal_opened");
   openPopup(addCardModal);
 });
 
