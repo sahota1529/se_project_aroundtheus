@@ -159,5 +159,3 @@ initialCards.forEach((card) => {
   // cardsList.append(newCard);
   renderCard(card, "append");
 });
-
-likeButtons.forEach((likeButton) => {});
