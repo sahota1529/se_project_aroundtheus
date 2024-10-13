@@ -113,10 +113,10 @@ function getCardElement(cardData) {
   cardTitleEl.textContent = cardData.name;
 
   cardImageEl.addEventListener("click", function () {
-    openModal(previewModal);
-    previewModalImageEl.src = cardData.link;
-    previewModalImageEl.alt = cardData.alt;
-    previewModalCaptionEl.textContent = cardData.name;
+    openPopup(imagePreviewModal);
+    imagePreviewImgEl.src = cardData.link;
+    imagePreviewImgEl.alt = cardData.name;
+    imagePreviewCaption.textContent = cardData.name;
   });
 
   return cardElement;
@@ -131,7 +131,7 @@ profileEditButton.addEventListener("click", () => {
   openPopup(profileEditModal);
 });
 
-addCardModal.addEventListener("click", () => openModal(addCardModal));
+// addCardModal.addEventListener("click", () => openModal(addCardModal));
 
 // add event listener for the add card modal close button
 closeButtons.forEach((button) => {
