@@ -127,7 +127,6 @@ function getCardElement(cardData) {
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal_opened");
   openPopup(profileEditModal);
 });
 
@@ -161,5 +160,4 @@ initialCards.forEach((card) => {
   renderCard(card, "append");
 });
 
-const likeButtons = document.querySelectorAll(".card__like-button");
 likeButtons.forEach((likeButton) => {});
