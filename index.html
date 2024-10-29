@@ -63,13 +63,22 @@
               class="modal__input"
               placeholder="Name"
               id="profile-title-input"
+              minlength="2"
+              maxlength="40"
+              required
             />
+            <span class="modal__error" id="profile-title-input-error"></span>
+          </label>
+          <label class="modal__label">
             <input
               type="text"
               name="description"
               class="modal__input"
               placeholder="Description"
               id="profile-description-input"
+              minlength="2"
+              maxlength="200"
+              required
             />
             <span
               class="modal__error"
