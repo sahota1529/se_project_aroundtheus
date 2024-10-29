@@ -69,11 +69,30 @@ const closeButtons = document.querySelectorAll(".modal__close");
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscape);
 }
+
+function handleEscape(event) {
+  const currentModal = document.querySelector(".modal_opened");
+  if (event.key === "Escape") {
+    closePopup(currentModal); // call the function to close the modal
+  }
+}
+
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    // if evt.target's classList contains "modal"
+    if (evt.target.classList.contains("modal")) {
+      closePopup(modal);
+    }
+  });
+});
+
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
