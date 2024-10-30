@@ -78,8 +78,8 @@ function openPopup(modal) {
 }
 
 function handleEscape(event) {
-  const currentModal = document.querySelector(".modal_opened");
   if (event.key === "Escape") {
+    const currentModal = document.querySelector(".modal_opened");
     closePopup(currentModal); // call the function to close the modal
   }
 }
