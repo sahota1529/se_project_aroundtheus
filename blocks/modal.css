@@ -105,17 +105,30 @@
   width: 100%;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 29.74px;
-  padding-bottom: 14px;
+  margin-bottom: 10px;
+  padding: 0 0 13px;
   font-size: 14px;
   line-height: 17px;
   box-sizing: border-box;
 }
 
-.modal__error_visible {
-  line-height: 15px;
+.modal__input:last-of-type {
+  margin-bottom: 0;
+}
+
+.modal__error {
   font-size: 12px;
+  line-height: 15px;
   color: #ff0000;
+  opacity: 0;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  transition: opacity 0.3s;
+}
+
+.modal__error_visible {
+  opacity: 1;
 }
 
 .modal__button_disabled {
