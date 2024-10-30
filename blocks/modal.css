@@ -97,12 +97,19 @@
   font-family: "Inter", Arial, serif;
 }
 
+.modal__label {
+  position: relative;
+}
+
 .modal__input {
-  width: 358px;
-  border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0.2);
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 29.74px;
-  padding-bottom: 13.26px;
+  padding-bottom: 14px;
+  font-size: 14px;
+  line-height: 17px;
+  box-sizing: border-box;
 }
 
 .modal__error_visible {
