@@ -174,9 +174,14 @@ addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
 const cardlistEl = document.querySelector(".cards__list");
 
-function renderCard(item, method = "prepend") {
-  const cardElement = getCardElement(item);
-  cardsList[method](cardElement);
+function createCard(cardData) {
+  const card = new Card();
+  return card.getView();
+}
+
+function renderCard(data, wrapper) {
+  const cardElement = createCard(data);
+  wrapper.prepend(cardElement);
 }
 
 initialCards.forEach((card) => {
