@@ -23,12 +23,7 @@ export default class FormValidator {
   }
 
   _checkInputValidity(inputEl) {
-    const checkInputValidity = new this._checkInputValidity(
-      this._formEl,
-      this._inputEl,
-      this._config
-    );
-    if (!this._inputEl.validity.valid) {
+    if (inputEl.validity.valid) {
       this._showInputError(inputEl);
     } else {
       this._hideInputError(inputEl);
@@ -56,9 +51,8 @@ export default class FormValidator {
     this._submitButton.disabled = true;
   }
 
-  _hasInvalidInput(inputList, btnEl) {
-    const hasInvalidInput = this._hasInvalidInput(inputList);
-    return !inputList.every((inputEl) => inputEl.validity.valid);
+  _hasInvalidInput() {
+    return !this._inputEls.every((inputEl) => inputEl.validity.valid);
   }
 
   _setEventListeners() {
