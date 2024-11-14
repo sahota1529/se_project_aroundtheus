@@ -111,6 +111,13 @@ function handleAddCardFormSubmit(e) {
   e.target.reset();
 }
 
+function handleImageClick(data) {
+  previewImage.src = data.link;
+  previewImage.alt = data.name;
+  previewTitle.textContent = data.name;
+  openModal(previewImageModal);
+}
+
 function createCard(data) {
   const card = new Card(data, "#card-template", handleImageClick);
   return card.getView();
@@ -178,11 +185,6 @@ addNewCardButton.addEventListener("click", () => {
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
 const cardlistEl = document.querySelector(".cards__list");
-
-function createCard(cardData) {
-  const card = new Card();
-  return card.getView();
-}
 
 initialCards.forEach((card) => {
   // const newCard = getCardElement(card);

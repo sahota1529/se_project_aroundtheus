@@ -29,7 +29,6 @@ export default class Card {
 
   _handleDeleteCard() {
     this._cardElement.removed();
-    this._cardElement = null;
   }
 
   _handleLikeIcon() {
@@ -44,18 +43,14 @@ export default class Card {
       .content.querySelector(".card")
       .cloneNode(true);
 
-    // get the card view
-    this._cardElement = this._cardElement.querySelector(".card__image");
-    this._cardElement.src = this._link;
-    this._cardElement.alt = this._name;
+    this._cardImage = this._cardElement.querySelector(".card__image");
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
 
     this._cardTitle = this._cardElement.querySelector(".card__title");
     this._cardTitle.textContent = this._name;
 
-    // set event listeners
     this._setEventListeners();
-
-    // return the card
     return this._cardElement;
   }
 }
