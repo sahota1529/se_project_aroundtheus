@@ -125,7 +125,7 @@ function createCard(data) {
 
 function renderCard(data, wrapper) {
   const cardElement = createCard(data);
-  wrapper.prepend(cardElement);
+  cardListEl.prepend(cardElement);
 }
 
 function getCardElement(cardData) {
