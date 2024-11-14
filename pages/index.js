@@ -116,6 +116,11 @@ function createCard(data) {
   return card.getView();
 }
 
+function renderCard(data, wrapper) {
+  const cardElement = createCard(data);
+  wrapper.prepend(cardElement);
+}
+
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -177,11 +182,6 @@ const cardlistEl = document.querySelector(".cards__list");
 function createCard(cardData) {
   const card = new Card();
   return card.getView();
-}
-
-function renderCard(data, wrapper) {
-  const cardElement = createCard(data);
-  wrapper.prepend(cardElement);
 }
 
 initialCards.forEach((card) => {
