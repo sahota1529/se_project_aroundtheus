@@ -112,10 +112,10 @@ function handleAddCardFormSubmit(e) {
 }
 
 function handleImageClick(data) {
-  previewImage.src = data.link;
-  previewImage.alt = data.name;
-  previewTitle.textContent = data.name;
-  openModal(previewImageModal);
+  imagePreviewImgEl.src = data.link;
+  imagePreviewImgEl.alt = data.name;
+  imagePreviewCaption.textContent = data.name;
+  openPopup(imagePreviewModal);
 }
 
 function createCard(data) {
@@ -123,9 +123,9 @@ function createCard(data) {
   return card.getView();
 }
 
-function renderCard(data, wrapper) {
+function renderCard(data, placement = "prepend") {
   const cardElement = createCard(data);
-  cardListEl.prepend(cardElement);
+  cardListEl[placement](cardElement);
 }
 
 function getCardElement(cardData) {
