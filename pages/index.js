@@ -40,7 +40,6 @@ const addCardModal = document.querySelector("#add-card-modal");
 const addCardButton = document.querySelector("#add-card-button");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const profileTitleInput = document.querySelector("#profile-title-input");
-const cardsWrap = document.querySelector(".cards__list");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
@@ -126,37 +125,6 @@ function createCard(data) {
 function renderCard(data, placement = "prepend") {
   const cardElement = createCard(data);
   cardListEl[placement](cardElement);
-}
-
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  const likeButton = cardElement.querySelector(".card__like-button");
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  cardDeleteButton.addEventListener("click", () => {
-    const cardToDelete = cardDeleteButton.closest(".card");
-    if (cardToDelete) {
-      console.log("Card found and will be deleted");
-      cardToDelete.remove();
-    }
-  });
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-  cardTitleEl.textContent = cardData.name;
-
-  cardImageEl.addEventListener("click", function () {
-    openPopup(imagePreviewModal);
-    imagePreviewImgEl.src = cardData.link;
-    imagePreviewImgEl.alt = cardData.name;
-    imagePreviewCaption.textContent = cardData.name;
-  });
-
-  return cardElement;
 }
 
 /* Event Listeners */
