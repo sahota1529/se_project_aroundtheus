@@ -147,6 +147,7 @@ closeButtons.forEach((button) => {
 profileEditModal.addEventListener("submit", handleProfileEditSubmit);
 
 addNewCardButton.addEventListener("click", () => {
+  addCardFormValidator.resetValidation();
   openPopup(addCardModal);
 });
 
