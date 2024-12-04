@@ -53,10 +53,10 @@
   cursor: pointer;
 }
 
-.card__like-button_liked {
-  background: transparent url(../images/blackHeart.svg) center no-repeat;
+/* .card__like-button_liked {
+  background: transparent url(../images/Active\ heart\ .svg) center no-repeat;
   background-color: none;
-}
+} */
 
 .card__delete-button {
   background: transparent url(../images/trashCan.svg) center no-repeat;
