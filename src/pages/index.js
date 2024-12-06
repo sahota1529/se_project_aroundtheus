@@ -56,7 +56,7 @@ const addCardPopup = new PopupWithForm(
 );
 
 addNewCardButton.addEventListener("click", () => {
-  popupWithAddCardForm.open();
+  addCardPopup.open();
 });
 
 const imagePreviewPopup = new PopupWithImage(
@@ -90,7 +90,7 @@ function handleImageClick(data) {
   imagePreviewImgEl.src = data.link;
   imagePreviewImgEl.alt = data.name;
   imagePreviewCaption.textContent = data.name;
-  openPopup(imagePreviewModal);
+  imagePreviewPopup.open(data);
 }
 
 function createCard(data) {
@@ -115,11 +115,6 @@ profileEditButton.addEventListener("click", () => {
 // addCardModal.addEventListener("click", () => openModal(addCardModal));
 
 //profileEditModal.addEventListener("submit", handleProfileEditSubmit);
-
-addNewCardButton.addEventListener("click", () => {
-  addCardFormValidator.resetValidation();
-  openPopup(addCardModal);
-});
 
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
