@@ -69,10 +69,6 @@ const userInfo = new UserInfo({
   jobElement: ".profile__description",
 });
 
-popupWithEditProfileForm.setEventListeners();
-popupWithAddCardForm.setEventListeners();
-popupWithImage.setEventListeners();
-
 function handleProfileEditSubmit(inputValues) {
   profileTitle.textContent = inputValues.title;
   profileDescription.textContent = inputValues.description;
