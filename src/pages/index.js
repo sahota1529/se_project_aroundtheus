@@ -118,7 +118,7 @@ profileEditButton.addEventListener("click", () => {
 
 //profileEditModal.addEventListener("submit", handleProfileEditSubmit);
 
-addCardForm.addEventListener("submit", handleAddCardFormSubmit);
+//addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
 const cardlistEl = document.querySelector(".cards__list");
 
