@@ -64,6 +64,8 @@ const imagePreviewPopup = new PopupWithImage(
   handleImageClick
 );
 
+imagePreviewPopup.setEventListeners();
+
 const userInfo = new UserInfo({
   nameElement: ".profile__title",
   jobElement: ".profile__description",
@@ -78,12 +80,12 @@ function handleProfileEditSubmit(inputValues) {
 function handleAddCardFormSubmit(inputValue) {
   const cardData = {
     name: inputValue.title,
-    link: inputValue.url,
+    link: inputValue.description,
   };
   renderCard(cardData);
-  addCardFormElement.reset();
-  addFormValidator.disableButton();
-  popupWithAddCardForm.close();
+  addCardForm.reset();
+  addCardFormValidator.disableSubmitButton();
+  addCardPopup.close();
 }
 
 function handleImageClick(data) {
