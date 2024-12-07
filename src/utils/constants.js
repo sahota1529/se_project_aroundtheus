@@ -50,9 +50,7 @@ const profileDescriptionInput = document.querySelector(
 const addCardTitleInput = document.querySelector("#add-card-title-input");
 const addCardUrlInput = document.querySelector("#add-card-url-input");
 const addCardForm = document.forms["add-card-form"];
-/*const addCardModalCloseButton = document.querySelector(
-  "#add-modal-close-button"
-);*/
+
 const addNewCardButton = document.querySelector(".profile__add-button");
 const profileEditForm = document.forms["profile-form"];
 const cardsList = document.querySelector(".cards__list");
