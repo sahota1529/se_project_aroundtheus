@@ -4,7 +4,17 @@ import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
-import { initialCards, config } from "../utils/constants.js";
+import {
+  initialCards,
+  formValidationSettings,
+  profileEditButton,
+  profileTitleInput,
+  profileDescriptionInput,
+  addCardForm,
+  addNewCardButton,
+  profileEditForm,
+  cardListEl,
+} from "../utils/constants.js";
 import UserInfo from "../components/UserInfo.js";
 
 /* Elements */
@@ -73,12 +83,15 @@ const cardSection = new Section(
   {
     items: initialCards,
     renderer: (data) => {
-      const card = createCard(data);
-      cardSection.renderItems();
+      //get the card html element
+      const cardElement = createCard(data);
+      //stick the card element on the page
+      cardSection.addItem(cardElement, "append");
     },
   },
   ".cards__list"
 );
+cardSection.renderItems();
 
 /* Event Listeners */
 
@@ -86,18 +99,9 @@ profileEditButton.addEventListener("click", () => {
   const { name, description } = userInfo.getUserInfo();
   profileTitleInput.value = name;
   profileDescriptionInput.value = description;
-
+  editCardFormValidator.resetValidation();
   profileEditPopup.open();
 });
-
-const formValidationSettings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
 
 const addCardFormValidator = new FormValidator(
   formValidationSettings,

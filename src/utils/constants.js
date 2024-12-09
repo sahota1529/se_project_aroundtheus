@@ -25,7 +25,8 @@ export const initialCards = [
   },
 ];
 
-export const config = {
+export const formValidationSettings = {
+  formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
@@ -33,8 +34,8 @@ export const config = {
   errorClass: "modal__error_visible",
 };
 
-const profileEditButton = document.querySelector("#profile-edit-button");
-const profileEditModal = document.querySelector("#profile-edit-modal");
+export const profileEditButton = document.querySelector("#profile-edit-button");
+export const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileAddButton = document.querySelector("#profile-add-button");
@@ -42,21 +43,21 @@ const profileAddModal = document.querySelector("#profile-add-modal");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardButton = document.querySelector("#add-card-button");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
-const profileTitleInput = document.querySelector("#profile-title-input");
-const profileDescriptionInput = document.querySelector(
+export const profileTitleInput = document.querySelector("#profile-title-input");
+export const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 
 const addCardTitleInput = document.querySelector("#add-card-title-input");
 const addCardUrlInput = document.querySelector("#add-card-url-input");
-const addCardForm = document.forms["add-card-form"];
+export const addCardForm = document.forms["add-card-form"];
 
-const addNewCardButton = document.querySelector(".profile__add-button");
-const profileEditForm = document.forms["profile-form"];
+export const addNewCardButton = document.querySelector(".profile__add-button");
+export const profileEditForm = document.forms["profile-form"];
 const cardsList = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
-const cardListEl = document.querySelector(".cards__list");
+export const cardListEl = document.querySelector(".cards__list");
 
 const imagePreviewModal = document.querySelector("#image-preview-modal");
 const imagePreviewImgEl = document.querySelector(".modal__image-preview");

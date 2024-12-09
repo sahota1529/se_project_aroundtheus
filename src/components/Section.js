@@ -9,7 +9,7 @@ export default class Section {
       this._renderer(item);
     });
   }
-  addItem(element) {
-    this._class.prepend(element);
+  addItem(element, placement = "prepend") {
+    this._class[placement](element);
   }
 }
