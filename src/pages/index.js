@@ -16,6 +16,7 @@ import {
   cardListEl,
 } from "../utils/constants.js";
 import UserInfo from "../components/UserInfo.js";
+import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 
 /* Elements */
 
@@ -79,6 +80,14 @@ function renderCard(data, placement = "prepend") {
   cardListEl[placement](cardElement);
 }
 
+function handleDeleteAction(card) {
+  confirmationModal.open();
+  confirmationModal.setSubmitAction(() => {
+    card._handleDeleteAction();
+    confirmationModal.close();
+  });
+}
+
 const cardSection = new Section(
   {
     items: initialCards,
@@ -92,6 +101,46 @@ const cardSection = new Section(
   ".cards__list"
 );
 cardSection.renderItems();
+
+const deleteModal = document.querySelector("#delete-modal");
+const deleteForm = deleteModal.querySelector(".modal__form");
+
+const confirmationModal = new PopupWithConfirmation({
+  popupSelector: "#delete-modal",
+});
+confirmationModal.setEventListeners();
+
+const avatarModal = new PopupWithForm({
+  popupSelector: "#avatar-modal",
+  handleFormSubmit: (formData) => {
+    userInfo.setAvatar({ avatar: formData.url });
+    avatarModal.close();
+  },
+});
+avatarModal.setEventListeners();
+
+const avatarForm = document.querySelector(".profile__avatar-form");
+
+const avatarButton = document.querySelector(".avatar__button");
+avatarButton.addEventListener("click", () => {
+  avatarModal.open();
+});
+
+const deleteModalCloseButton = deleteModal.querySelector(
+  ".modal__close-button"
+);
+
+deleteModalCloseButton.addEventListener("click", () => {
+  confirmationModal.close();
+});
+
+const deleteModalCancelButton = deleteModal.querySelector(
+  ".modal__submit-button-cancel"
+);
+
+deleteModalCancelButton.addEventListener("click", () => {
+  confirmationModal.close();
+});
 
 /* Event Listeners */
 
