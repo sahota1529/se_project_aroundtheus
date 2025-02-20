@@ -54,7 +54,7 @@
           type="button"
         ></button>
         <h3 class="modal__title">Edit Profile</h3>
-        <form class="modal__form" name="profile-form">
+        <form class="modal__form" name="profile-form" id="image-edit-form">
           <label class="modal__label">
             <input
               type="text"
@@ -131,14 +131,14 @@
 
     <!--Style image preview modal-->
 
-    <div class="modal" id="image-preview-modal">
+    <div class="modal" id="preview-modal">
       <div class="modal__preview-container">
         <button
           type="button"
           class="modal__close"
           id="modal-image-preview-button"
         ></button>
-        <img class="modal__image-preview" src="#" alt="" id="modal-image" />
+        <img class="modal__image" src="#" alt="" id="modal-image" />
         <p class="modal__caption"></p>
       </div>
     </div>
@@ -164,7 +164,7 @@
           type="button"
           id="avatar-edit-button"
         ></button>
-        <form class="modal__form profile__avatar-form">
+        <form class="modal__form">
           <h1 class="modal__heading">Change Profile Picture</h1>
           <input
             type="url"
