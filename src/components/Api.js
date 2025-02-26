@@ -25,19 +25,19 @@ export default class Api {
     }).then((res) => this._checkResponce(res));
   }
 
-  updateUserInfo({ title, description }) {
+  updateUserInfo({ name, description }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        name: title,
+        name: name,
         about: description,
       }),
     }).then((res) => this._checkResponce(res));
   }
 
   deleteCard(id) {
-    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+    return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
     }).then((res) => this._checkResponce(res));
@@ -68,7 +68,7 @@ export default class Api {
     }).then((res) => this._checkResponce(res));
   }
 
-  changeAvatar({ url }) {
+  changeAvatar(url) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
