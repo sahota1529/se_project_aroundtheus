@@ -7,53 +7,23 @@ import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import PopupConfirm from "../components/PopupConfirm.js";
 import Api from "../components/Api.js";
-
-/* -------------------------------------------------------------------------- */
-/*                                  Variables                                 */
-/* -------------------------------------------------------------------------- */
-
-const config = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__form-input",
-  submitButtonSelector: ".modal__save-button",
-  inactiveButtonClass: "modal__save-button_disabled",
-  inputErrorClass: "modal__error",
-  errorClass: "modal__form-input_type_error",
-};
-
-/* -------------------------------------------------------------------------- */
-/*                              Profile Variables                             */
-/* -------------------------------------------------------------------------- */
-
-const profileTitleInput = document.querySelector("#profile-title-input");
-const profileSubtitleInput = document.querySelector("#profile-subtitle-input");
-const profileForm = document.forms["modal-form"];
-const editImageForm = document.querySelector("#image-edit-form");
-const avatarImage = document.querySelector("#profile-avatar-image");
-const profileEditImageForm = document.querySelector("#image-edit-form");
-const pencil = document.querySelector("#profile-pencil");
-
-/* -------------------------------------------------------------------------- */
-/*                                  Card Variables                            */
-/* -------------------------------------------------------------------------- */
-
-const addCardModal = document.querySelector("#add-card-modal");
-const addCardForm = addCardModal.querySelector("#add-card-form");
-const cardsWrap = document.querySelector(".cards__list");
-
-/* -------------------------------------------------------------------------- */
-/*                               Preview Image Variables                      */
-/* -------------------------------------------------------------------------- */
-
-const previewModal = document.querySelector("#preview-modal");
-const modalImage = previewModal.querySelector(".modal__image");
-
-/* -------------------------------------------------------------------------- */
-/*                                   Buttons                                  */
-/* -------------------------------------------------------------------------- */
-
-const profileEditBtn = document.querySelector("#profile-edit-button");
-const addNewCardBtn = document.querySelector("#add-card-button");
+import {
+  config,
+  profileTitleInput,
+  profileSubtitleInput,
+  profileForm,
+  editImageForm,
+  profileEditImageForm,
+  avatarImage,
+  pencil,
+  addCardModal,
+  addCardForm,
+  cardsWrap,
+  previewModal,
+  modalImage,
+  profileEditBtn,
+  addNewCardBtn,
+} from "../utils/constants.js";
 
 /* -------------------------------------------------------------------------- */
 /*                                    API'S                                   */
@@ -115,9 +85,9 @@ function handleCardSubmit({ title: name, subtitle: link }) {
   api
     .addCard({ name, link })
     .then((card) => {
-      debugger;
       newCardSection.addItem(card);
       addImageForm.close();
+      addImageForm.resetForm();
     })
     .catch((err) => {
       alert(`${err} Failed to add card.`);
@@ -235,8 +205,8 @@ modalImage.addEventListener("click", () => {
 /*                                   Classes                                  */
 /* -------------------------------------------------------------------------- */
 
-const profileEditImage = new FormValidator(config, editImageForm);
-profileEditImage.enableValidation();
+const avatarEditFormValidator = new FormValidator(config, profileEditImageForm);
+avatarEditFormValidator.enableValidation();
 
 const addCardFormValidator = new FormValidator(config, addCardForm);
 addCardFormValidator.enableValidation();
@@ -271,16 +241,10 @@ const avatarEditForm = new PopupWithForm(
 );
 avatarEditForm.setEventListeners();
 
-const avatarEditFormValidation = new FormValidator(
-  config,
-  profileEditImageForm
-);
-avatarEditFormValidation.enableValidation();
-
 const newCardSection = new Section(
   {
     items: [],
     renderer: createCard,
   },
-  cardsWrap
+  ".cards__list"
 );
