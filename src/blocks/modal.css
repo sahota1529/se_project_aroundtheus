@@ -87,15 +87,7 @@
 }
 
 .modal__form {
-  max-width: 358px;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  border-radius: 1px;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
 }
 
 .modal__form-fieldset {
@@ -108,9 +100,9 @@
   margin: 0;
 }
 
-.modal__label {
+/*.modal__label {
   position: relative;
-}
+}*/
 
 .modal__form-input {
   border: none;
@@ -132,8 +124,7 @@
 
 .modal__save-button {
   background-color: #000;
-  opacity: 0.2;
-  border: black solid 1px;
+  border: none;
   margin: 18px 0 0;
   width: 100%;
   height: 50px;
@@ -183,9 +174,9 @@
   transition: opacity 0.3s;
 }
 
-.modal__error_visible {
+/*.modal__error_visible {
   opacity: 1;
-}
+}*/
 
 /*.modal__form-input:invalid {
   line-height: 15px;
@@ -204,40 +195,14 @@
 
 @media screen and (max-width: 410px) {
   .modal__container {
-    box-sizing: border-box;
-    width: 282px;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    padding-left: 22px;
-    padding-right: 22px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 25px 22px 22px;
   }
 
-  .modal__form-input {
-    width: 100%;
-    margin-bottom: 30px;
-    font-size: 14px;
-  }
-
-  .modal__save-button modal__save-button_disabled {
-    width: 100%;
-    margin-top: 15px;
+  .modal__save-button {
     font-size: 14px;
   }
 
   .modal__heading {
     font-size: 18px;
-    line-height: 21.78px;
-    margin-bottom: 75px;
-  }
-
-  .modal__close-button {
-    width: 26px;
-    height: 26px;
-    bottom: calc(100% + 10px);
-    left: 90%;
   }
 }
