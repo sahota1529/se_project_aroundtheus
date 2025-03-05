@@ -8,16 +8,23 @@
   width: 100%;
 }
 
-.footer__copyright {
+.footer__text {
   font-weight: 400;
   font-size: 18px;
-  line-height: 21.78px;
+  font-family: "Inter", Arial, serif;
+  font-style: normal;
+  line-height: normal;
   padding-bottom: 60px;
   margin: 0;
+  color: #545454;
 }
 
-@media screen and (max-width: 400px) {
-  .footer__copyright {
+@media screen and (max-width: 620px) {
+  .footer {
+    margin: 48px auto 36px;
+  }
+
+  .footer__text {
     font-size: 14px;
     line-height: 16.94px;
     padding-bottom: 36px;
