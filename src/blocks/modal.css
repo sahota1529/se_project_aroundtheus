@@ -29,6 +29,7 @@
   position: relative;
   width: 430px;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 .modal__preview-container {
@@ -48,7 +49,7 @@
   height: 40px;
   position: absolute;
   bottom: calc(100% + 5px);
-  left: calc(100% + 5px);
+  /*left: calc(100% + 5px);*/
   background-size: contain;
   cursor: pointer;
   padding: 0;

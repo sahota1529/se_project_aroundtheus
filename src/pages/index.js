@@ -197,10 +197,6 @@ profileEditBtn.addEventListener("click", () => {
   profileEditForm.open();
 });
 
-modalImage.addEventListener("click", () => {
-  previewImagePopup.open();
-});
-
 /* -------------------------------------------------------------------------- */
 /*                                   Classes                                  */
 /* -------------------------------------------------------------------------- */
